@@ -1,0 +1,72 @@
+:root {
+  color-scheme: light;
+  --ink: #111b31;
+  --muted: #536176;
+  --line: #d9e2ee;
+  --surface: #f5f8fc;
+  --brand: #0a62d0;
+  --brand-dark: #07306a;
+  --focus: #ffbf3f;
+}
+
+* { box-sizing: border-box; }
+
+html { font-family: Inter, Arial, sans-serif; line-height: 1.6; color: var(--ink); background: #fff; overflow-wrap: anywhere; }
+body { margin: 0; }
+a { color: var(--brand); text-underline-offset: 3px; }
+a:hover { color: var(--brand-dark); }
+a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+header {
+  background: var(--brand-dark);
+  color: #fff;
+  padding: 24px;
+}
+
+.header-inner, main, footer { width: min(760px, calc(100% - 40px)); margin: 0 auto; }
+.brand { font-size: 1rem; font-weight: 700; }
+header h1 { margin: 18px 0 6px; font-size: 2.5rem; line-height: 1.08; }
+header p { margin: 0; color: #dceaff; }
+main { padding: 36px 0 52px; }
+h2 { margin: 36px 0 10px; font-size: 1.35rem; line-height: 1.25; }
+h3 { margin: 22px 0 8px; font-size: 1.05rem; }
+p, li { font-size: 1rem; }
+ul, ol { padding-left: 1.4rem; }
+li + li { margin-top: 7px; }
+
+.summary {
+  margin: 0 0 30px;
+  padding: 18px 20px;
+  border-left: 4px solid var(--brand);
+  background: var(--surface);
+}
+
+.action {
+  display: inline-block;
+  margin: 8px 0 16px;
+  padding: 12px 18px;
+  border-radius: 6px;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.action:hover { color: #fff; background: var(--brand-dark); }
+
+.data-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+.data-table th, .data-table td { padding: 12px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+.data-table th { background: var(--surface); }
+
+footer { padding: 24px 0 40px; border-top: 1px solid var(--line); color: var(--muted); }
+footer p { margin: 5px 0; }
+
+@media (max-width: 560px) {
+  .header-inner, main, footer { width: min(100% - 28px, 760px); }
+  header { padding: 20px 0; }
+  main { padding-top: 26px; }
+  .data-table, .data-table tbody, .data-table tr, .data-table th, .data-table td { display: block; }
+  .data-table thead { display: none; }
+  .data-table tr { border: 1px solid var(--line); margin-bottom: 12px; }
+  .data-table td { border: 0; }
+  .data-table td + td { border-top: 1px solid var(--line); }
+}
